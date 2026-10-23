@@ -205,7 +205,11 @@ h2.title{margin:0 0 14px;font-size:clamp(32px,4.6vw,52px);line-height:1;font-wei
 .timeline li:last-child::before{display:none}
 .timeline li::after{content:"";position:absolute;left:0;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--ink);transition:background .3s,border-color .3s,transform .3s}
 @media (hover:hover){.timeline li:hover::after{background:var(--sun);border-color:var(--sun);transform:scale(1.25)}}
-.timeline li.now::after{background:var(--sun);border-color:var(--sun)}
+.timeline li.now::after{background:var(--sun);border-color:var(--sun);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--sun) 50%,transparent)}70%,100%{box-shadow:0 0 0 10px transparent}}
+.timeline li:not(.now) .when,.timeline li:not(.now) h3{opacity:.78}
+.badge-now{display:inline-flex;align-items:center;gap:6px;margin-left:10px;font-size:12.5px;font-weight:700;color:var(--sun);border:1px solid currentColor;border-radius:999px;padding:0 9px;line-height:1.7;vertical-align:1px}
+.badge-now::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 .timeline .when{font-size:14px;color:var(--muted)}
 .timeline h3{margin:2px 0 6px;font-size:20px;font-weight:700}
 .timeline p{margin:0;max-width:40em;color:var(--muted)}
@@ -228,7 +232,7 @@ footer{max-width:1120px;margin:0 auto;padding:32px 24px 48px;color:var(--muted);
 .reveal.in{opacity:1;transform:none}
 
 @media (prefers-reduced-motion: reduce){
-  .cell.hit,.scroll .arr{animation:none}
+  .cell.hit,.scroll .arr,.timeline li.now::after{animation:none}
   .reveal{opacity:1;transform:none;transition:none}
 }
 </style>
@@ -382,8 +386,8 @@ footer{max-width:1120px;margin:0 auto;padding:32px 24px 48px;color:var(--muted);
         <div>
           <span class="status run" data-en="In progress since 2024" data-es="En curso desde 2024">Em andamento desde 2024</span>
           <h3 data-en="A flexibility market for distributed resources" data-es="Mercado de flexibilidad para recursos distribuidos">Mercado de flexibilidade para recursos distribuídos</h3>
-          <p data-en="R&amp;D with Grupo ENEL that combines regulatory studies, electrical analysis and a DER management platform, with a pilot to measure how consumers and prosumers react to price signals. My work covers voltage regulation and PV hosting capacity in feeders with smart inverters."
-             data-es="I+D con el Grupo ENEL que une estudios regulatorios, análisis eléctricos y una plataforma de gestión de los RED, con un piloto para medir cómo reaccionan consumidores y prosumidores a señales de precio. Mi frente aborda la regulación de tensión y la hosting capacity fotovoltaica en alimentadores con inversores inteligentes.">P&amp;D com o Grupo ENEL que une estudos regulatórios, análises elétricas e uma plataforma de gestão dos RED, com um piloto para medir como consumidores e prossumidores reagem a sinais de preço. Minha frente trata de regulação de tensão e hosting capacity fotovoltaica em alimentadores com inversores inteligentes.</p>
+          <p data-en="R&amp;D with Grupo Enel that combines regulatory studies, electrical analysis and a DER management platform, with a pilot to measure how consumers and prosumers react to price signals. My work covers voltage regulation and PV hosting capacity in feeders with smart inverters."
+             data-es="I+D con el Grupo Enel que une estudios regulatorios, análisis eléctricos y una plataforma de gestión de los RED, con un piloto para medir cómo reaccionan consumidores y prosumidores a señales de precio. Mi frente aborda la regulación de tensión y la hosting capacity fotovoltaica en alimentadores con inversores inteligentes.">P&amp;D com o Grupo Enel que une estudos regulatórios, análises elétricas e uma plataforma de gestão dos RED, com um piloto para medir como consumidores e prossumidores reagem a sinais de preço. Minha frente trata de regulação de tensão e hosting capacity fotovoltaica em alimentadores com inversores inteligentes.</p>
           <ul class="tags"><li>OpenDSS</li><li>Hosting capacity</li><li data-en="Smart inverters" data-es="Inversores inteligentes">Inversores inteligentes</li><li>Electricity 2026</li></ul>
         </div>
       </li>
@@ -466,32 +470,32 @@ footer{max-width:1120px;margin:0 auto;padding:32px 24px 48px;color:var(--muted);
   <section class="bus" id="trajetoria">
     <p class="dss">New Bus.<em>trajetoria</em> kV=13.8 <span data-en="! bus 4 of 5" data-es="! barra 4 de 5">! barra 4 de 5</span></p>
     <h2 class="title" data-en="Education and experience" data-es="Formación y experiencia">Formação e experiência</h2>
-    <p class="lede" data-en="From UFPA, in Belém, to a research network spanning Brazil and Honduras." data-es="De la UFPA, en Belém, a una red de investigación entre Brasil y Honduras.">Da UFPA, em Belém, a uma rede de pesquisa entre Brasil e Honduras.</p>
+    <p class="lede" data-en="Academic background and research and development work in Brazil and Honduras." data-es="Trayectoria académica y actuación en investigación y desarrollo en Brasil y Honduras.">Trajetória acadêmica e atuação em pesquisa e desenvolvimento no Brasil e em Honduras.</p>
     <ol class="timeline">
       <li>
-        <span class="when" data-en="2020 to 2025">2020 a 2025</span>
+        <span class="when" data-en="2020 to 2025" data-es="2020 a 2025">2020 a 2025</span>
         <h3 data-en="BSc in Electrical Engineering, UFPA" data-es="Grado en Ingeniería Eléctrica, UFPA">Graduação em Engenharia Elétrica, UFPA</h3>
-        <p data-en="Thesis on the management and feasibility of hybrid PV systems with storage in the Amazon, named best thesis of the Faculty of Electrical and Biomedical Engineering in 2025." data-es="Trabajo de grado sobre gestión y viabilidad de sistemas híbridos fotovoltaicos con almacenamiento en la Amazonía, elegido el mejor de la Facultad de Ingenierías Eléctrica y Biomédica en 2025.">TCC sobre gestão e viabilidade de sistemas híbridos fotovoltaicos com armazenamento na Amazônia, eleito o melhor da Faculdade de Engenharias Elétrica e Biomédica em 2025.</p>
+        <p data-en="Undergraduate thesis on energy management and the feasibility of hybrid photovoltaic systems with storage in the Amazon, recognized as the best thesis of UFPA’s Faculty of Electrical and Biomedical Engineering in 2025." data-es="Trabajo de grado sobre gestión energética y viabilidad de sistemas híbridos fotovoltaicos con almacenamiento en la Amazonía, reconocido como el mejor de la Facultad de Ingenierías Eléctrica y Biomédica de la UFPA en 2025.">Trabalho de Conclusão de Curso sobre gestão energética e viabilidade de sistemas híbridos fotovoltaicos com armazenamento na Amazônia, reconhecido como o melhor TCC da Faculdade de Engenharias Elétrica e Biomédica da UFPA em 2025.</p>
       </li>
       <li>
-        <span class="when" data-en="2021 to 2023">2021 a 2023</span>
-        <h3 data-en="Intern, CEAMAZON" data-es="Pasante, CEAMAZON">Estagiário, CEAMAZON</h3>
-        <p data-en="First steps in R&amp;D on SISGEE, energy management for the UFPA campus, and SIMA, multimodal electric mobility." data-es="Primeros pasos en I+D en los proyectos SISGEE, de gestión de energía del campus de la UFPA, y SIMA, de movilidad eléctrica multimodal.">Primeiros passos em P&amp;D nos projetos SISGEE, de gestão de energia do campus da UFPA, e SIMA, de mobilidade elétrica multimodal.</p>
-      </li>
-      <li>
-        <span class="when" data-en="2021 to present" data-es="2021 a la fecha">2021 até hoje</span>
-        <h3 data-en="Researcher, CEAMAZON (PCT Guamá)" data-es="Investigador, CEAMAZON (PCT Guamá)">Pesquisador, CEAMAZON (PCT Guamá)</h3>
-        <p data-en="Energy efficiency, electric mobility and renewable integration in R&amp;D projects with Norte Energia and Grupo ENEL." data-es="Eficiencia energética, movilidad eléctrica e integración de renovables en proyectos de I+D con Norte Energia y el Grupo ENEL.">Eficiência energética, mobilidade elétrica e integração de renováveis em projetos de P&amp;D com a Norte Energia e o Grupo ENEL.</p>
-      </li>
-      <li>
-        <span class="when" data-en="2025 to present" data-es="2025 a la fecha">2025 até hoje</span>
-        <h3 data-en="MSc in Electrical Engineering, PPGEE/UFPA" data-es="Maestría en Ingeniería Eléctrica, PPGEE/UFPA">Mestrado em Engenharia Elétrica, PPGEE/UFPA</h3>
-        <p data-en="Advised by Prof. Maria Emília de Lima Tostes, with a CAPES scholarship." data-es="Bajo la dirección de la Prof. Maria Emília de Lima Tostes, con beca CAPES.">Orientação da Profa. Maria Emília de Lima Tostes, com bolsa CAPES.</p>
+        <span class="when" data-en="2021 to 2023" data-es="2021 a 2023">2021 a 2023</span>
+        <h3 data-en="Research Intern, CEAMAZON" data-es="Pasante de Investigación, CEAMAZON">Estagiário de Pesquisa, CEAMAZON</h3>
+        <p data-en="Worked on research and development (R&amp;D) projects, including SISGEE, focused on energy management at UFPA’s Guamá Campus, and SIMA, dedicated to multimodal electric mobility." data-es="Actuación en proyectos de investigación y desarrollo (I+D), incluidos el SISGEE, orientado a la gestión energética del Campus Guamá de la UFPA, y el SIMA, dedicado a la movilidad eléctrica multimodal.">Atuação em projetos de pesquisa e desenvolvimento (P&amp;D), incluindo o SISGEE, voltado à gestão energética do Campus Guamá da UFPA, e o SIMA, dedicado à mobilidade elétrica multimodal.</p>
       </li>
       <li class="now">
-        <span class="when" data-en="2026 to present" data-es="2026 a la fecha">2026 até hoje</span>
-        <h3 data-en="Researcher, EPSR (Honduras)" data-es="Investigador, EPSR (Honduras)">Pesquisador, EPSR (Honduras)</h3>
-        <p data-en="Electric Power and Energy Systems Research Group, working on distributed generation, BESS and V2G for the Honduran grid." data-es="Electric Power and Energy Systems Research Group, con estudios de generación distribuida, BESS y V2G para la red hondureña.">Electric Power and Energy Systems Research Group, com estudos de geração distribuída, BESS e V2G para a rede hondurenha.</p>
+        <span class="when" data-en="Since 2021" data-es="Desde 2021">Desde 2021</span><span class="badge-now" data-en="Current" data-es="Actual">Atual</span>
+        <h3 data-en="Researcher, CEAMAZON | PCT Guamá" data-es="Investigador, CEAMAZON | PCT Guamá">Pesquisador, CEAMAZON | PCT Guamá</h3>
+        <p data-en="Research in energy efficiency, electric mobility, energy planning and renewable integration, taking part in R&amp;D projects in partnership with Norte Energia and Grupo Enel." data-es="Investigaciones en eficiencia energética, movilidad eléctrica, planificación energética e integración de fuentes renovables, con participación en proyectos de I+D en alianza con Norte Energia y el Grupo Enel.">Desenvolvimento de pesquisas em eficiência energética, mobilidade elétrica, planejamento energético e integração de fontes renováveis, com participação em projetos de P&amp;D em parceria com a Norte Energia e o Grupo Enel.</p>
+      </li>
+      <li class="now">
+        <span class="when" data-en="Since 2025" data-es="Desde 2025">Desde 2025</span><span class="badge-now" data-en="Current" data-es="Actual">Atual</span>
+        <h3 data-en="MSc in Electrical Engineering, PPGEE/UFPA" data-es="Maestría en Ingeniería Eléctrica, PPGEE/UFPA">Mestrado em Engenharia Elétrica, PPGEE/UFPA</h3>
+        <p data-en="Research on the complementarity between hydro and photovoltaic generation and its applications in energy planning. CAPES scholarship holder, advised by Prof. Maria Emília de Lima Tostes." data-es="Investigación sobre la complementariedad entre la generación hidroeléctrica y fotovoltaica y sus aplicaciones en la planificación energética. Becario CAPES, bajo la dirección de la Prof. Dra. Maria Emília de Lima Tostes.">Pesquisa voltada à complementaridade entre geração hidrelétrica e fotovoltaica e suas aplicações no planejamento energético. Bolsista CAPES, sob orientação da Profa. Dra. Maria Emília de Lima Tostes.</p>
+      </li>
+      <li class="now">
+        <span class="when" data-en="Since 2026" data-es="Desde 2026">Desde 2026</span><span class="badge-now" data-en="Current" data-es="Actual">Atual</span>
+        <h3 data-en="Researcher, EPSR | Honduras" data-es="Investigador, EPSR | Honduras">Pesquisador, EPSR | Honduras</h3>
+        <p data-en="Collaboration with the Electric Power and Energy Systems Research Group (EPSR) on studies of distributed generation integration, battery energy storage systems (BESS) and Vehicle-to-Grid (V2G) technologies in distribution networks." data-es="Colaboración con el Electric Power and Energy Systems Research Group (EPSR) en estudios de integración de generación distribuida, sistemas de almacenamiento en baterías (BESS) y tecnologías Vehicle-to-Grid (V2G) en redes de distribución.">Colaboração com o Electric Power and Energy Systems Research Group (EPSR) em estudos de integração de geração distribuída, sistemas de armazenamento por baterias (BESS) e tecnologias Vehicle-to-Grid (V2G) em redes de distribuição.</p>
       </li>
     </ol>
     <div class="extras">
